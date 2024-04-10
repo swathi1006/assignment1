@@ -2,11 +2,7 @@ import 'package:assignment1/screens/registrationPage.dart';
 import 'package:assignment1/screens/splashPage.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
-//import 'package:assignment1/utils/const_snackbar.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-//import 'package:assignment1/screens/registration.dart';
 import 'package:assignment1/utils/mycolors.dart';
 import 'package:assignment1/utils/textThemes.dart';
 
