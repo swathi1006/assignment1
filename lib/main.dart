@@ -1,5 +1,4 @@
 import 'package:assignment1/screens/loginPage.dart';
-import 'package:assignment1/screens/registrationPage.dart';
 import 'package:flutter/material.dart';
 import 'package:assignment1/screens/splashPage.dart';
 
