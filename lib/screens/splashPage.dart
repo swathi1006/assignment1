@@ -11,8 +11,13 @@ class SplashPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       body: Container(
+        foregroundDecoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(40),
+            color: Colors.black12.withOpacity(.5)),
           decoration: const BoxDecoration(
+
             image: DecorationImage(
+
                 fit: BoxFit.cover,
                 image: AssetImage(
                 "assets/images/pbk.png"))

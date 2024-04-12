@@ -4,6 +4,7 @@ import 'package:assignment1/utils/textThemes.dart';
 import 'package:assignment1/utils/mycolors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import 'dart:math' as math;
 
 class Registration_Page extends StatelessWidget {
   @override
@@ -12,20 +13,27 @@ class Registration_Page extends StatelessWidget {
       appBar: AppBar(
           leadingWidth: 100,
           toolbarHeight: 40,
-          leading:  CircleAvatar(
-            backgroundColor: Colors.blueGrey.shade50,
-        child:  IconButton(onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context)=>SplashPage()));
-        },
-            icon: const Icon(Icons.arrow_back_ios_new_rounded) ),
-      )) ,
+          leading:  Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: CircleAvatar(
+              backgroundColor: Colors.blueGrey.shade50,
+                    child:  IconButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>SplashPage()));
+                    },
+              icon: const Icon(Icons.arrow_back_ios_new_rounded) ),
+                  ),
+          )) ,
       body: SafeArea(
           child: SingleChildScrollView(
             child: Center(
                     child: Padding(
             padding: const EdgeInsets.only(left: 18.0,right: 18.0,top: 22.0,bottom: 22.0),
+
+
+
             child: Column(
               children: [
+
             
                 const SizedBox(
                   height: 100,

@@ -31,12 +31,15 @@ class LoginPage extends StatelessWidget {
 
 
 
-        leading: CircleAvatar(
-          backgroundColor: Colors.blueGrey.shade50,
-          child: IconButton(onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>SplashPage()));
-          },
-              icon: const Icon(Icons.arrow_back_ios_new_rounded) ),
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: CircleAvatar(
+            backgroundColor: Colors.blueGrey.shade50,
+            child: IconButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>SplashPage()));
+            },
+                icon: const Icon(Icons.arrow_back_ios_new_rounded) ),
+          ),
         ),
       ),
       body: SafeArea(
