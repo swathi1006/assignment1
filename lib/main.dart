@@ -1,3 +1,4 @@
+import 'package:assignment1/screens/home1.dart';
 import 'package:assignment1/screens/loginPage.dart';
 import 'package:flutter/material.dart';
 import 'package:assignment1/screens/splashPage.dart';
@@ -15,9 +16,10 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
 
       debugShowCheckedModeBanner: false,
-      home: SplashPage(),
+    //  home: SplashPage(),
       //  home: LoginPage(),
       //home: Registration_Page(),
+     home: Home1(),
 
     );
   }
