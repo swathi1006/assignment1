@@ -22,12 +22,12 @@ class Home1 extends StatelessWidget {
     ),
     Data(
       image: "https://www.beardsanddaisies.co.uk/cdn/shop/products/170-180_KENTIAPALM_1400x.jpg?v=1701776142",
-      name: "kentiapalm",
+      name: "Kentiapalm",
       water: "250 ml"
     ),
     Data(
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWqaTR77SW27VPr3L10LZH94d3QinQHijClQ&s",
-      name: "Peperomia \n Obtusifolia",
+      name: "Peperomia \nObtusifolia",
       water: "250 ml"
     )
   ];
@@ -46,7 +46,7 @@ class Home1 extends StatelessWidget {
         ),
         actions: [
            Padding(
-             padding: const EdgeInsets.all(15.0),
+             padding: const EdgeInsets.only(left: 35.0),
              child: CircleAvatar(
               backgroundColor: Colors.blue.shade200,
               child: Icon(Icons.add,
@@ -74,19 +74,27 @@ class Home1 extends StatelessWidget {
                   //   crossAxisAlignment : CrossAxisAlignment.center,
                    //  mainAxisSize : MainAxisSize.max,
                    children:[
-                     Image.network(plant[index].image!),
-                     Column(
-                       mainAxisAlignment: MainAxisAlignment.start,
-                       children: [
-                         Text(plant[index].name!,
-                         style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
-                         Text(plant[index].water!),
-                       ],
+                     Image.network(plant[index].image!,fit: BoxFit.contain,
+                     height: 150,
+                     width: 150,),
+                     Padding(
+                       padding: const EdgeInsets.only(left: 50.0,right: 1,top: 25),
+                       child: Column(
+                         mainAxisAlignment: MainAxisAlignment.start,
+                         children: [
+                           Text(plant[index].name!,
+                           style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
+                           Text(plant[index].water!),
+                         ],
+                       ),
                      ),
-                     const CircleAvatar(
-                       backgroundColor: Colors.white,
-                       child: Icon(Icons.water_drop_outlined,
-                         color: Colors.tealAccent,),
+                     Padding(
+                       padding: const EdgeInsets.only(left: 25.0),
+                       child: const CircleAvatar(
+                         backgroundColor: Colors.white,
+                         child: Icon(Icons.water_drop_outlined,
+                           color: Colors.tealAccent,),
+                       ),
                      ),
                    ]
                  ),
