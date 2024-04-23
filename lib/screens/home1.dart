@@ -36,80 +36,103 @@ class Home1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 100,
-        leading: const Padding(
-          padding: EdgeInsets.all(25.0),
-          child: Icon(
-            Icons.settings_outlined,
-          size: 40,
-          color: Colors.black54,),
-        ),
+       // toolbarHeight: 100,
+        leading: Icon(
+          Icons.settings_outlined,
+        size: 35,
+        color: Colors.black54,),
         actions: [
            Padding(
-             padding: const EdgeInsets.only(left: 35.0),
+             padding: const EdgeInsets.only(left: 25.0,right: 15),
              child: CircleAvatar(
+               radius: 18,
               backgroundColor: Colors.blue.shade200,
               child: Icon(Icons.add,
               color: Colors.white,),
                        ),
            ),
         ],
-        title: Text("  Water Today",
-        style: TextStyle(fontWeight: FontWeight.bold),),
+
       ),
       body:
-      ListView.separated(
-            itemBuilder: (context,index){
-              return Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Container(
-                  height: 130,
-                  width: 500,
-                  decoration: BoxDecoration(
-                      color: Colors.primaries[Random().nextInt(Colors.primaries.length)].withOpacity(0.2),
-                    borderRadius: BorderRadius.circular(20)
-                  ),
-                 child: Row(
-                  //   mainAxisAlignment: MainAxisAlignment.start,
-                  //   crossAxisAlignment : CrossAxisAlignment.center,
-                   //  mainAxisSize : MainAxisSize.max,
-                   children:[
-                     Image.network(plant[index].image!,fit: BoxFit.contain,
-                     height: 150,
-                     width: 150,),
-                     Padding(
-                       padding: const EdgeInsets.only(left: 50.0,right: 1,top: 25),
-                       child: Column(
-                         mainAxisAlignment: MainAxisAlignment.start,
-                         children: [
-                           Text(plant[index].name!,
-                           style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
-                           Text(plant[index].water!),
-                         ],
-                       ),
-                     ),
-                     Padding(
-                       padding: const EdgeInsets.only(left: 25.0),
-                       child: const CircleAvatar(
-                         backgroundColor: Colors.white,
-                         child: Icon(Icons.water_drop_outlined,
-                           color: Colors.tealAccent,),
-                       ),
-                     ),
-                   ]
-                 ),
-                ),
-              );
-            },
-            separatorBuilder: (context,index) {
-              if (((index+1) % 4 == 0) && (index != 0)){
-                return const Text("Fri, February 2017",style: TextStyle(fontSize: 26,color:Colors.black87,fontWeight: FontWeight.bold),);
-              } else {
-                return Container();
-              }
+      Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 30,),
+            const Text("  Water Today",
+              style: TextStyle(fontWeight: FontWeight.bold,
+              fontSize: 30,
+              ),),
+            const SizedBox(height: 20,),
+            Expanded(
+              child: ListView.separated(
+                    itemBuilder: (context,index){
+                      return Padding(
+                        padding: const EdgeInsets.only(top: 15.0),
+                        child: Container(
+                          height: 130,
+                          width: 500,
+                          decoration: BoxDecoration(
+                              color: Colors.primaries[Random().nextInt(Colors.primaries.length)].withOpacity(0.2),
+                            borderRadius: BorderRadius.circular(20)
+                          ),
+                         child: Row(
+                             mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          //   crossAxisAlignment : CrossAxisAlignment.center,
+                            mainAxisSize : MainAxisSize.min,
+                           children:[
+                            Container(
 
-            },
-            itemCount: plant.length),
+                              height: 120,
+                              width: 120,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                image: DecorationImage(image: NetworkImage(plant[index].image!),
+                                fit: BoxFit.cover)
+                              ),
+                            ),
+                             Padding(
+                               padding: const EdgeInsets.only(left: 50.0,right: 1,top: 25),
+                               child: Column(
+                                // mainAxisAlignment: MainAxisAlignment.start,
+                                // mainAxisSize: MainAxisSize.min,
+                                // crossAxisAlignment: CrossAxisAlignment.center,
+                                 children: [
+                                   Text(plant[index].name!,
+                                   style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
+                                   Text(plant[index].water!),
+                                 ],
+                               ),
+                             ),
+                            // SizedBox(width: 20,),
+                             const Padding(
+                               padding: EdgeInsets.only(left: 25.0),
+                               child: CircleAvatar(
+                                 backgroundColor: Colors.white,
+                                 child: Icon(Icons.water_drop_outlined,
+                                   color: Colors.tealAccent,),
+                               ),
+                             ),
+                           ]
+                         ),
+                        ),
+                      );
+                    },
+                    separatorBuilder: (context,index) {
+                      if (((index+1) % 4 == 0) && (index != 0)){
+                        return const Text("Fri, February 2017",style: TextStyle(fontSize: 23,color:Colors.black87,fontWeight: FontWeight.bold),);
+                      } else {
+                        return Container();
+                      }
+
+                    },
+                    itemCount: plant.length),
+            ),
+          ],
+        ),
+      ),
 
     );
   }
