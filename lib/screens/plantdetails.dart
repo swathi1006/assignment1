@@ -1,4 +1,3 @@
-import 'package:assignment1/models/grid.dart';
 import 'package:flutter/material.dart';
 import 'package:assignment1/models/plants.dart';
 
@@ -11,7 +10,7 @@ class PlantDetails extends StatefulWidget {
 
 class _PlantDetailsState extends State<PlantDetails> {
   late Plants plantobj;
-  late GridData gridDataobj;
+
   bool isExpanded = false;
   List text1 = ["FREQUENCY","WATER","TEMP","LIGHT"];
   List text2 = ["1/week","250 ml","15-24 c","Low"];
@@ -26,7 +25,7 @@ class _PlantDetailsState extends State<PlantDetails> {
   Widget build(BuildContext context) {
     final index = ModalRoute.of(context)?.settings.arguments as int;
     plantobj = plantslist[index];
-    gridDataobj = tiles[index];
+
 
     return Scaffold(
       body: SingleChildScrollView(
