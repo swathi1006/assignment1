@@ -1,5 +1,6 @@
 import 'package:assignment1/screens/home1.dart';
 import 'package:assignment1/screens/loginPage.dart';
+import 'package:assignment1/screens/plantdetails.dart';
 import 'package:flutter/material.dart';
 import 'package:assignment1/screens/splashPage.dart';
 
@@ -19,7 +20,12 @@ class MyApp extends StatelessWidget{
      //home: SplashPage(),
       //  home: LoginPage(),
       //home: Registration_Page(),
-     home: Home1(),
+       home: Home1(),
+      //home: PlantDetails(),
+
+      routes:{
+        'Plants': (context) => PlantDetails()
+      },
 
     );
   }

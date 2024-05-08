@@ -7,7 +7,8 @@ import 'package:google_fonts/google_fonts.dart';
 class Home1 extends StatelessWidget {
 
   var plant = [
-    Data(image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoJFJ2qNnNmqUxhuMpZ2sj75dWpFIsQ9OxzFi0LALX4g&s",
+    Data(
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoJFJ2qNnNmqUxhuMpZ2sj75dWpFIsQ9OxzFi0LALX4g&s",
     name: "Filodento \nAtom",
     water: "250 ml"),
     Data(
@@ -69,54 +70,62 @@ class Home1 extends StatelessWidget {
             Expanded(
               child: ListView.separated(
                     itemBuilder: (context,index){
-                      return Padding(
-                        padding: const EdgeInsets.only(top: 15.0),
-                        child: Container(
-                          height: 130,
-                          width: 500,
-                          decoration: BoxDecoration(
-                              color: Colors.primaries[Random().nextInt(Colors.primaries.length)].withOpacity(0.2),
-                            borderRadius: BorderRadius.circular(20)
+                      return InkWell(
+                          onTap: () => Navigator.pushNamed(
+                              context,
+                             'Plants',
+                            arguments: index
                           ),
-                         child: Row(
-                             mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          //   crossAxisAlignment : CrossAxisAlignment.center,
-                            mainAxisSize : MainAxisSize.min,
-                           children:[
-                            Container(
 
-                              height: 120,
-                              width: 120,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                image: DecorationImage(image: NetworkImage(plant[index].image!),
-                                fit: BoxFit.cover)
-                              ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 15.0),
+                          child: Container(
+                            height: 130,
+                            width: 500,
+                            decoration: BoxDecoration(
+                                color: Colors.primaries[Random().nextInt(Colors.primaries.length)].withOpacity(0.2),
+                              borderRadius: BorderRadius.circular(20)
                             ),
-                             Padding(
-                               padding: const EdgeInsets.only(left: 50.0,right: 1,top: 25),
-                               child: Column(
-                                // mainAxisAlignment: MainAxisAlignment.start,
-                                // mainAxisSize: MainAxisSize.min,
-                                // crossAxisAlignment: CrossAxisAlignment.center,
-                                 children: [
-                                   Text(plant[index].name!,
-                                   style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
-                                   Text(plant[index].water!),
-                                 ],
+                           child: Row(
+                               mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            //   crossAxisAlignment : CrossAxisAlignment.center,
+                              mainAxisSize : MainAxisSize.min,
+                             children:[
+                              Container(
+
+                                height: 120,
+                                width: 120,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  image: DecorationImage(image: NetworkImage(plant[index].image!),
+                                  fit: BoxFit.cover)
+                                ),
+                              ),
+                               Padding(
+                                 padding: const EdgeInsets.only(left: 50.0,right: 1,top: 25),
+                                 child: Column(
+                                  // mainAxisAlignment: MainAxisAlignment.start,
+                                  // mainAxisSize: MainAxisSize.min,
+                                  // crossAxisAlignment: CrossAxisAlignment.center,
+                                   children: [
+                                     Text(plant[index].name!,
+                                     style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
+                                     Text(plant[index].water!),
+                                   ],
+                                 ),
                                ),
-                             ),
-                            // SizedBox(width: 20,),
-                             const Padding(
-                               padding: EdgeInsets.only(left: 25.0),
-                               child: CircleAvatar(
-                                 backgroundColor: Colors.white,
-                                 child: Icon(Icons.water_drop_outlined,
-                                   color: Colors.tealAccent,),
+                              // SizedBox(width: 20,),
+                               const Padding(
+                                 padding: EdgeInsets.only(left: 25.0),
+                                 child: CircleAvatar(
+                                   backgroundColor: Colors.white,
+                                   child: Icon(Icons.water_drop_outlined,
+                                     color: Colors.tealAccent,),
+                                 ),
                                ),
-                             ),
-                           ]
-                         ),
+                             ]
+                           ),
+                          ),
                         ),
                       );
                     },
